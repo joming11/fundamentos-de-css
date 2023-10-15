@@ -1,0 +1,347 @@
+/*invocar una hoja de estilos desde una hoja de estilo
+usamos:
+@import url("otra-hoja.css");
+mala pracica para sitios muy grandes
+
+Selectores básicos
+-etiquetas (elementos html)
+-identificadores (atributo id - #)
+-clases (atributo class)
+*/
+
+html {
+	scroll-behavior: smooth;
+}
+
+p {
+	color: midnightblue;
+}
+
+/* dar estilos a traves de Id se considera una mala practica */
+#p-2 {
+	color: skyblue;
+}
+
+/* usar clases para dar estilos, permite reutilizar codigo css */
+.texto-32 {
+	color: steelblue;
+}
+
+/*selectores avanzados - hijos directos
+se usa el mayor que para identificar que es un hijo
+de primer nivel*/
+
+.hijos-directos > li {
+	color: limegreen;
+}
+
+/*los estilos aplican a pesar de que no es el hijo directo*/
+.hijos-descendientes b {
+	color: limegreen;
+}
+
+/*selectores de hermanos general/adyacente aplican estilos a los hermanos
+(elementos en el mismo nivel) que esten por debajo del elemento de referencia
+*/
+
+.hnos-gral ~ li {
+	color: limegreen;
+}
+
+/*aplica estilos al hermano inmediatamente debajo del de referencia*/
+.hnos-ady + li {
+	color: limegreen;
+}
+
+/*Selectores de Atributo*/
+.sel-atributos a[href]{
+	background-color: darkolivegreen;
+}
+
+.sel-atributos a[target="_blank"]{
+	color: white;
+}
+
+/*el * aplica estilos si el elemento contiene la palabra usada como parametro*/
+.sel-atributos a[href*="midominio"]{
+	font-size: 28px;
+}
+
+/*el ^ circunflejo aplica estilos si el elemento comienza con el texto usado como parametro*/
+.sel-atributos a[href^="https://"]{
+	text-decoration: none;	
+}
+
+/*el $ aplica estilos si el elemento tiene el texto usado como parametro al final*/
+.sel-atributos a[href$=".com"]{
+	background-color: black;
+}
+
+/*el ~ aplica estilos si el elemento tiene el texto usado en una lista
+separada por espacios*/
+.sel-atributos a[class~="notas"]{
+	background-color: midnightblue;
+}
+
+/*el | aplica estilos si el elemento tiene el texto usado en una lista
+separada por espacios y que despues del texto en en cuestion pueda venir
+un guion medio - */
+.sel-atributos a[class|="menu"]{
+	font-size: 40px;
+	text-decoration: none;
+	font-style: italic;
+}
+
+/*Selector Universal - aplicará estilos a todos los elementos del documento
+Se puede usar tambien dentro de una seccion en especifico
+todo lo que este dentro de cierta clase o cualquier identificador*/
+* {
+	font-family: sans-serif;
+}
+
+/*Pseudoclases - estiliza bajo ciertos estados*/
+.form-pseudo *:required {
+	border-color: navy;
+}
+
+.form-pseudo *:valid {
+	border-color: yellowgreen;
+}
+
+.form-pseudo *:invalid {
+	border-color: red;
+}
+
+.form-pseudo *:focus {
+	background-color: skyblue;
+}
+
+.form-pseudo *:disabled {
+	background-color: hotpink;
+}
+
+.menu-pseudo a {
+	display: block;
+}
+
+.form-pseudo a:visited {
+	color: olive;
+}
+
+/*el estado hover, al ser un estado interactivo, deberia declararse
+al final de otros pseudo estados, para no ser inhabilitado por otro
+pseudoestado*/
+.menu-pseudo a:hover {
+	color: orangered;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+/*
+:link
+:active
+:visited
+:hover
+*/
+
+#temario-css:target {
+	background-color: lightgrey;
+}
+
+/*Pseudoclases por posicion*/
+.list-pseudo li:first-child {
+	color: limegreen;
+}
+
+.list-pseudo li:last-child {
+	color: lightsalmon;
+}
+
+.list-pseudo li:nth-child(7) {
+	color: rebeccapurple;
+}
+
+/*4n implica que aplicara estilos cada 4 elementos*/
+.list-pseudo li:nth-child(4n) {
+	font-size: 28px;
+}
+
+/*(3n + 1) implica que aplicara estilos cada 4 elementos*/
+.list-pseudo li:nth-child(3n + 1) {
+	font-weight: bold;
+}
+
+/*even aplicara estilos a los elementos pares*/
+.list-pseudo li:nth-child(even) {
+	background-color: maroon;
+}
+
+/*odd aplicara estilos a los elementos impares*/
+.list-pseudo li:nth-child(odd) {
+	background-color: orange;
+}
+
+/*Aplica estilos al primer elemento hijo de su tipo*/
+.artc-pseudo p:first-of-type {
+	background-color: mediumorchid;
+}
+
+/*Aplica estilos al ultimo elemento hijo de su tipo*/
+.artc-pseudo p:last-of-type {
+	background-color: darkorchid;
+}
+
+/*Aplica estilos al ultimo elemento hijo de su tipo*/
+.artc-pseudo p:nth-of-type(3) {
+	background-color: orchid;
+}
+
+/*Aplica estilos a todos los elementos hijos excepto al mencionado
+dentro del () puede ir mas de un elemento separado por comas
+(p, .list, #uno)*/
+.artc-pseudo *:not(p) {
+	background-color: lightpink;
+}
+
+/*Pseudoelementos*/
+
+.shinigami::before {
+	content: "🐱‍👤";
+}
+
+.shinigami::after {
+	content: "🗡";
+}
+
+.rango::before {
+	content: "🥋";
+}
+
+.rango::after {
+	content: "⚔"
+}
+
+/*aplican para elementos de bloque*/
+.p-pseudo::first-letter{
+	color: gold;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.p-pseudo::first-line {
+	font-style: italic;
+}
+
+.p-pseudo::selection {
+	background-color: black;
+	color: silver;
+}
+
+/*agrupar selectores*/
+.form-agrup-selec input[type="text"],
+.form-agrup-selec input[type="email"],
+.form-agrup-selec textarea {
+	background-color:black;
+	border-color:goldenrod;
+	display: block;
+	width: 250px;
+
+}
+
+/*Algoritmo de CSS
+-Cascada: mecanismo del navegador para aplicar estilos
+evalua 3 aspectos: 
+ 	1) -origen del codigo
+ 		-user agent: estilos por default del browser
+ 		-Personalizaciones de usuario (cambios de configuracion: colores, temas etc) 
+ 		-Codigo Css (autor)
+ 	2) La especificidad del Selector
+ 	3)Orden de aparicion
+ 	El browser va leyendo linea a linea el doc html
+ 	ve leyendo los estilos y si hay declaraciones iguales
+ 	sobreescribe el valor, de ahi que el estilo aplicado será
+ 	el ultimo declarado.
+ 	
+
+ 	2) Especificidad del Selector
+ 	-La especificidad es un peso (importancia o valor) que se le asigna a una declaración CSS dada
+ 	 determinada por el número correspondiente de cada tipo de selector. 
+ 	 Cuando varias declaraciones tienen igual especificidad, 
+ 	 se aplicará al elemento la última declaración encontrada en el CSS. 
+ 	 La especificidad solo se aplica cuando el mismo elemento es objetivo de múltiples declaraciones. 
+ 	 Según las reglas de CSS, en caso de que un elemento sea objeto de una declaración directa, 
+ 	 esta siempre tendrá preferencia sobre las reglas heredadas de su ancestro.
+
+ 	 La siguiente lista de tipos de selectores incrementa en función de la especificidad:
+
+ 	 -etiquetas y pseudoelementos...........0,0,0,1
+ 	 -clases, atributos y pseudoclases......0,0,1,0
+ 	 -Identificadores.......................0,1,0,0
+ 	 -estilos en linea......................1,0,0,0
+ 	 !important..............rompe la especificidad
+
+    Selectores de tipo (p.e., h1) y pseudo-elementos (p.e., ::before).
+    Selectores de clase (p.e., .example), selectores de atributos (p.e., [type="radio"]) y pseudo-clases (p.e., :hover).
+    Selectores de ID (p.e., #example).
+
+    El selector universal (*), los combinadores (+, >, ~, ' ', || (en-US)) y la pseudo-clase de negación (:not()) 
+    no tienen efecto sobre la especificidad. 
+    (Sin embargo, los selectores declarados dentro de :not() si lo tienen.)
+    */
+/*peso de especificidad 0,0,1*/
+blockquote {
+	background-color: skyblue;
+}
+
+/*peso de especificidad 0,1,1*/
+blockquote.cita {
+	background-color: midnightblue;
+}
+
+/*peso de especificidad 1,0,0*/
+#cita {
+	background-color: blueviolet;
+}
+
+/*peso de especificidad 1,0,1*/
+blockquote#cita {
+	background-color: coral;
+}
+
+
+/*peso de especificidad 0,1,0*/
+.cita {
+	background-color: steelblue;
+}
+
+/*por cascada deberia establecer el estilo de la clase cita
+pero por peso especifico aplica el estilo de la etiqueta con el Id
+
+-como el html, se definio un estilo en linea y este tiene un peso de 1,0,0,0
+es el definido por peso especifico*/
+
+/*La herencia:  es la capacidad de un selector de obtener (heredar)
+de sus ancestros mas cercanos, para aplicarla se usa el valor inherit
+si queremos evitarla podemos asignar otro valor o inicializar la propiedad
+en cuestion con el valor initial
+
+la propiedad unset reestablece el elemento a su valor natural, esto significa
+que si la propiedad se hereda naturalmente, actuara como inherit, si no se hereda
+actuará como initial*/
+
+.cita cite {
+	background-color: darkseagreen;
+} 
+
+.cita cite {
+	background-color: inherit;
+}
+
+
+
+
+
+
+
+
+

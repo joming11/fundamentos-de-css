@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Fundaments</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<article id="temario-css">
+	<h1>CSS básico</h1>
+	<h2>Temario</h2>
+	<ul>
+		<li><a href="index.html#selectores-basicos">Selectores basicos</a></li>
+		<li><a href="index.html#selectores-avanzados">Selectores Avanzados</a></li>
+		<li><a href="index.html#pseudoclases">Pseudoclases</a></li>
+		<li><a href="index.html#pseudoelementos">Pseudoelementos</a></li>
+		<li><a href="index.html#agrupar-selectores">Agrupar selectores</a></li>
+		<li><a href="index.html#algoritmo-css">Funcionamiento de CSS</a></li>
+		<li><a href="index.html#box-model">Modelo de Caja</a></li>
+		<li><a href="index.html"></a></li>
+	</ul>
+	</article>
+	<hr>
+	<article id="selectores-basicos">
+		<h2>selectores basicos</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing, elit.</p>
+		<p id="p-2">Lorem ipsum dolor sit amet, consectetur adipisicing, elit.</p>
+		<p class="texto-32">Lorem ipsum dolor sit amet, consectetur adipisicing, elit.</p>
+		<a href="index.html#temario-css">☝️</a>
+	</article>
+	<hr>
+	<article id="selectores-avanzados">
+		<h2>Selectores Avanzados</h2>
+		<h3>Selectores de hijos</h3>
+		<h4>selectores de hijos directos</h4>
+		<ul class="hijos-directos">
+			<li><b>Primavera</b></li>
+			<li><b>Verano</b></li>
+			<li><b>Otoño</b></li>
+			<li><b>Invierno</b></li>
+		</ul>
+		<h4>selectores de hijos descedientes</h4>
+		<ul class="hijos-descendientes">
+			<li><b>Primavera</b></li>
+			<li><b>Verano</b></li>
+			<li><b>Otoño</b></li>
+			<li><b>Invierno</b></li>
+		</ul>
+		<h3>selectores de hermanos</h3>
+		<h4>Selector de hnos (general)</h4>	
+		<ul>
+			<li><b>Primavera</b></li>
+			<li class="hnos-gral"><b>Verano</b></li>
+			<li><b>Otoño</b></li>
+			<li><b>Invierno</b></li>
+		</ul>
+		<h4>Selector de hnos(adyacente)</h4>
+		<ul>
+			<li><b>Primavera</b></li>
+			<li class="hnos-ady"><b>Verano</b></li>
+			<li><b>Otoño</b></li>
+			<li><b>Invierno</b></li>
+		</ul>
+		<h3>Selectores de Atributos</h3>
+		<nav class="sel-atributos">
+			<ul>
+				<li><a href="" target="_blank">inicio</a></li>
+				<li><a href="http://midominio.com" target="_blank">cursos</a></li>
+				<li><a href="" target="_blank">blog</a></li>
+				<li><a href="" target="_blank">notas</a></li>
+				<li><a class="menu-item notas" href="" target="_blank">notas</a></li>
+				<li><a href="" target="_blank">CV</a></li>
+				<li><a href="" target="_blank">Acerca</a></li>
+			</ul>
+			<h3>Selector universal (*)</h3>
+		</nav>
+		<a href="index.html#temario-css">☝️</a>
+	</article>
+	<hr>
+<article id="pseudoclases">
+	<h2>Pseudoclases de elementos interactivos</h2>
+	<form action="" class="form-pseudo">
+		<input type="text" name="nombre" placeholder="tu nombre" required>
+		<br>
+		<input type="email" name="correo" placeholder="escribe tu correo" required>
+		<br>
+		<input type="submit" value="enviar" disabled>
+	</form>
+	<nav class="menu-pseudo">
+		<a href="#seccion1">seccion 1</a>
+		<a href="#seccion1">seccion 2</a>
+		<a href="#seccion1">seccion 3</a>
+		<a href="#seccion1">seccion 4</a>
+	</nav>
+	<ol class="list-pseudo">
+		<li>Yamamoto</li>
+		<li>Soi fon</li>
+		<li>Gin</li>
+		<li>Unohana</li>
+		<li>Aizen</li>
+		<li>Byakuya</li>
+		<li>Komamura</li>
+		<li>Shunsui</li>
+		<li>Tosen</li>
+		<li>Toshiro</li>
+		<li>Kempachi</li>
+		<li>Mayuri</li>
+	</ol>
+	<article class="artc-pseudo">
+		<header>Header</header>
+		<p>p de parrafo</p>
+		<div>un div =)</div>
+		<p>otro p</p>
+		<section>Section</section>
+		<p>oootro p</p>
+		<div>otro div</div>
+		<p>otra p mas</p>
+		<footer>y un footer</footer>
+	</article>
+	<a href="index.html#temario-css">☝️</a>
+</article>
+<hr>
+<article id="pseudoelementos">
+	<h2>Pseudoelementos</h2>
+	<p>
+		<i>Shihakusho</i><span class="shinigami">escuadron</span>
+		<span class="rango">Capitan</span>
+	</p>
+	<p class="p-pseudo">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut repudiandae dolor est doloribus reprehenderit error consequatur officia corrupti accusantium porro vitae odit iure molestiae, perspiciatis! Sequi repudiandae error ipsum, ipsa?
+	</p>
+	<a href="index.html#temario-css">☝️</a>
+</article>
+<hr>
+<article id="agrupar-selectores">
+	<h2>Agrupar selectores</h2>
+	<form action="" class="form-agrup-selec">
+		<input type="text" name="nombre" placeholder="tu nombre">
+		<input type="email" name="correo" placeholder="tu correo">
+		<textarea name="comentarios" placeholder="deja tu comentarios">
+		</textarea>
+		<input type="submit">
+	</form>
+	<a href="index.html#temario-css">☝️</a>
+</article>
+<hr>
+<article id="algoritmo-css">
+	<h2>Algoritmo de CSS</h2>
+	<ul>
+		<li>La Cascada</li>
+		<li>La especificidad</li>
+		<li>La herencia</li>
+	</ul>
+	<blockquote id="cita" class="cita" style="background-color: mediumseagreen;">
+		No importa de que lado estes durante una guerra, una vez que ésta comienza, ambos lados son malvados - <cite>Shunsui Kyoraku</cite>
+	</blockquote>
+	<a href="index.html#temario-css">☝️</a>
+</article>
+<hr>
+
+<a href="index.html#temario-css">☝️</a>
+</body>
+</html>
